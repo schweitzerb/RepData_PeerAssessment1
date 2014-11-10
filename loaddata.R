@@ -61,4 +61,4 @@ ByWeekday <- ddply(stepsImputed,c("interval","day"),summarise,total=sum(steps,na
 
 panels <- qplot(as.numeric(interval)/288*100/4.16667,mean,data=ByWeekday,facets=day~.,color=day)+
       geom_line(aes(group=day))
-print(panels)
+print(panels) 
