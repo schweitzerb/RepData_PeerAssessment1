@@ -5,7 +5,7 @@ output:
     keep_md: yes
 ---
 
-This document contains the analysis and report for **Reproducible Research: Peer Assessment 1** as submitted by github user *schweitzerb*.  
+This document contains the analysis and report for **Reproducible Research: Peer Assessment 1** as produced and submitted by github user *schweitzerb* (also, resubmitted for the second time taking the class in November 2014).   
   
   <br />  
   

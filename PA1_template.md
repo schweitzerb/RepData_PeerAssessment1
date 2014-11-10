@@ -5,7 +5,7 @@ output:
     keep_md: yes
 ---
 
-This document contains the analysis and report for **Reproducible Research: Peer Assessment 1** as submitted by github user *schweitzerb*.  
+This document contains the analysis and report for **Reproducible Research: Peer Assessment 1** as produced and submitted by github user *schweitzerb* (also, resubmitted for the second time taking the class in November 2014).   
   
   <br />  
   
@@ -50,9 +50,9 @@ hist(stepsByDay$total,breaks=10,main="Histogram of the Total Number of Steps per
      ylab="Number of Days",xlab="Total Steps",col="orange")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
-The histogram shows an approximately normal distribution of the total number of steps per day (with some outliers). The **mean number of steps per day** is *9354.2295* and the **median number of steps per day** across the observation period is *10395*.
+The histogram shows an approximately normal distribution of the total number of steps per day (with some outliers). The **mean number of steps per day** is *9354.2295082* and the **median number of steps per day** across the observation period is *10395*.
 
 <br />
 ## What is the average daily activity pattern?
@@ -74,7 +74,7 @@ plot(as.numeric(stepsByInterval$interval)/288*100/4.16667,stepsByInterval$mean,t
      hour of day)",col="orange",lwd=2)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 The timeseries plot provides a good overview of the movement activity over the course of the average day. There is a big spike of activity in the morning (between 8am and 10am), and a clearly distinguishable resting state during the night (from midnight to just past 5am).
 
@@ -112,13 +112,13 @@ hist(stepsByDay_imputed$total,breaks=10,main="Histogram of the Total Number of S
      (imputed data)",ylab="Number of Days",xlab="Total Steps",col="orange")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 The histogram shows a notebale drop in the number of days with less than 2500 steps (and a corresponding increase in days over 10000 steps). It seems that in the original analysis, the missing data caused multiple days to have very low step totals. This confirms our initial, cursory observation that the the missing values appeared in large chunks, rather than randomly throughout the data. Hence, imputing the missing data with the averages from the available data noteably increased the total number of daily steps for those days which had large amounts of missing values.
 
 Consequently, the mean and median number of steps per day also increased:
-- **Mean:** 1.0766 &times; 10<sup>4</sup> (imputed) vs. 9354.23 (original)
-- **Median:** 1.0766 &times; 10<sup>4</sup> (imputed) vs. 1.0395 &times; 10<sup>4</sup> (original)
+- **Mean:** 1.076619 &times; 10<sup>4</sup> (imputed) vs. 9354.23 (original)
+- **Median:** 1.076619 &times; 10<sup>4</sup> (imputed) vs. 1.0395 &times; 10<sup>4</sup> (original)
 
 Additionally, the mean and median in the imputed data converged to the same number, as there is now a large number of days with exactly the mean number of total steps. 
 
@@ -148,7 +148,7 @@ panels <- qplot(as.numeric(interval)/288*100/4.16667,mean,data=ByWeekday,facets=
 print(panels)
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 We can see that there are distinct differences in the activity patterns between weekdays and weekends. This means that we should consider revising our imputation method to account for this difference. 
 
